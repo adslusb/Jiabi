@@ -41,3 +41,14 @@ def Replace_space(aString):
         i+=1
     return new_string
     
+    
+#1.4 Palindrome permutation check
+def palinCheck(aString):
+    new_string=aString.lower().replace(' ', '')
+    i=0
+    for w in new_string:
+        if new_string.count(w)%2!=0:
+            i+=1
+        new_string.replace(w,'')
+    return i<2
+
