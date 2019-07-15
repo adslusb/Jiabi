@@ -52,3 +52,40 @@ def palinCheck(aString):
         new_string.replace(w,'')
     return i<2
 
+#1.5 one edit away
+
+def one_edit_away(s1,s2):
+    i1=0
+    i2=0
+    j1=0
+    j2=0
+    k1=0
+    k2=0
+    if len(s1)==len(s2):
+        for w in s1:
+            if s1[i1]==s2[i1]:
+                i1+=1
+                i2+=1
+            else:
+                i1+=1       
+    elif len(s1)==len(s2)-1:
+        for w in s2:
+            if s1[j1]==s2[j2]:
+                j1+=1
+                j2+=1
+            else:
+                j2+=1 # if and only if one insert, final j1 == j2 - 1, 
+    elif len(s1)==len(s2)+1: 
+        for w in s1:
+            if s1[k1]==s2[k2]:
+                k1+=1
+                k2+=1
+            else:
+                k1+=1 # if and only if one removal, final k1 == k2 + 1,           
+    else:
+        return False
+    
+    return i1== i2+1 or j1 ==j2-1 or k1 == k2 +1
+
+
+        
